@@ -1,0 +1,57 @@
+
+#include <stdio.h>
+int main(){
+    int a=0,j=0,c=0,flag=0;
+	char num[100]={};
+	char num1[50]={};
+	char num2[50]={};
+	scanf("%s", &num);              		
+	while( num[a]!='\0')
+	{ 
+	  num[a++];
+	}
+	c=a/2;
+	int b=a;
+	if(b%2==0)
+	{
+    for(int i=0; i<c;i++)
+    {num1[i]=num[i];}
+    for(int i=a-1;i>=c;i--)
+    {
+        num2[j++]=num[i];}
+	}
+	else {
+    for(int i=0; i<c;i++)
+    {num1[i]=num[i];}
+    
+    for(int i=a-1;i>c;i--)
+    {
+        num2[j++]=num[i];}
+	}
+ int i=0;
+ while (i < 50 )
+    {
+      if( num1 [i] == num2 [i])
+       {
+           i++;
+         flag = 0;
+         continue;
+       }
+       if( num1 [i] < num2 [i])
+       {
+         flag = -1;
+         break;
+       }
+      if( num1 [i] > num2 [i])
+       {
+         flag = 1;
+         break;
+       }
+  }
+  if (flag == 0)
+    printf (" YES");
+  if(flag == -1)
+    printf ("NO ");
+  if( flag == 1)
+    printf ("No");
+}
